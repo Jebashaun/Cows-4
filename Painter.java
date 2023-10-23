@@ -33,30 +33,69 @@ public class Painter
     }
     
     public void paintPaperStack(Graphics g){
-        for(int i = 1; i <  2000; i += 6){
+        int x = 0, y = 0;
+        while (x < 2000){
             g.setColor(Color.white);
-            g.fillRect(i*3, i*3, 300, 500);
+            g.fillRect(x*3, y*3, 300, 500);
             g.setColor(Color.gray);
-            g.drawRect(i*3, i*3, 300, 500);
+            g.drawRect(x*3, y*3, 300, 500);
+            x += 6 ;
+            y += 6;
         }
     }
     
     public void paintCornerWeb(Graphics g){
-        for (int i = 0; i < 2000; i+= 5) {
-            for (int j = 0; j < 2000; j += 5) {
-                g.drawLine(2000 - i, j, 2000 - j,i);
-            }
-        }
+      int x1 = 0;
+      int y1 = 600;
+      while (y1>=0){
+        g.setColor(Color.WHITE);
+        g.drawLine(x1,0,0,y1);
+        x1=x1+10;
+        y1=y1-10;
+
+    }
     }
     
     public void paintRedRange(Graphics g){
-        // for(int i = 0; i <  2000; i++){
-        //     g.setColor(new Color((i * 0.1285f), 0, 0));
-        //     g.drawLine(i, 0, i, 2000);
-        // }
+        int x = 0;
+        
+        while (x < 255){
+            Color color = new Color(x, 0 ,0);
+            System.out.println(color);
+            g.setColor(color);
+            g.drawLine(x, 0, x, 500);
+            x++;
+        }
     }
     
     public void paintXBox(Graphics g){
+        int x = 0;
+        g.setColor(Color.WHITE);
+        while (x < 240){
+            g.fillRect(x, 0, 10, 10);
+            x += 15;
+        }
+        x = 0;
+        while (x <= 240){
+            g.fillRect(x, 240, 10, 10);
+            x += 15;
+        }
+        int y = 0;
+        while (y < 240){
+            g.fillRect(0, y, 10, 10);
+            y += 15;
+        }
+        y = 0;
+        while (y < 240){
+            g.fillRect(240, y, 10, 10);
+            y += 15;
+        }
+        x = 0;
+        while (x < 240){
+            g.fillRect(x, x, 10, 10);
+            g.fillRect(240 - x, x, 10, 10);
+            x += 15;
+        }
         
     }
 

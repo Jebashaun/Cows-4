@@ -3,7 +3,6 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 import java.util.*;
-import sun.audio.*;
 import java.io.*;
 import javax.swing.JOptionPane;
 public class Level5Runner extends JPanel implements ActionListener, MouseListener, KeyListener

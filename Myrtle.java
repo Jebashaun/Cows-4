@@ -11,40 +11,43 @@ public class Myrtle extends Turtle
 
     public void move(int numSteps){
         for (int i = 0; i < numSteps; i++){
-            super.move();
+            move();
         }
     }
 
     public void moveToWall(){
-        while(super.frontIsClear()){
-            super.move();
+        while(frontIsClear()){
+            move();
         }
     }
 
     //Level 2
 
     public void moveToFruit(){
-        while(super.frontIsClear() && !super.isNextToFruit()){
-            super.move();
+        while(frontIsClear() && !isNextToFruit()){
+            move();
         }
     }
 
     public void pickFruit(int numFruit){
         for (int i = 0; i < numFruit; i++){
-            super.pickFruit();
+            pickFruit();
         }
     }
 
     //Level 3
 
     public void pickAllFruit(){
-        while(super.hasFruit()){
-            super.pickFruit();
+        while(isNextToFruit()){
+            pickFruit();
         }
     }
 
     public void placeRow(int numSteps){
-        
+        for (int i = 0; i < numSteps; i++){
+            move();
+            placeFruit();
+        }
     }
 
     //Level 4
